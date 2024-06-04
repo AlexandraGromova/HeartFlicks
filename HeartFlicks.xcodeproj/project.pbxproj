@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D98EB6A62BF74DFE00EE7CCA /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EB6A52BF74DFE00EE7CCA /* MainScreen.swift */; };
 		D9CEE7232BF12C5A00EC48FB /* HeartFlicksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE7222BF12C5A00EC48FB /* HeartFlicksApp.swift */; };
 		D9CEE7252BF12C5A00EC48FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE7242BF12C5A00EC48FB /* ContentView.swift */; };
 		D9CEE7272BF12C5C00EC48FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9CEE7262BF12C5C00EC48FB /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D98EB6A52BF74DFE00EE7CCA /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		D9CEE71F2BF12C5A00EC48FB /* HeartFlicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartFlicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CEE7222BF12C5A00EC48FB /* HeartFlicksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartFlicksApp.swift; sourceTree = "<group>"; };
 		D9CEE7242BF12C5A00EC48FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9A1A5082C0EB29500C1D008 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9CEE7162BF12C5A00EC48FB = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +88,7 @@
 				D9CEE7332BF12C5D00EC48FB /* HeartFlicksTests */,
 				D9CEE73D2BF12C5D00EC48FB /* HeartFlicksUITests */,
 				D9CEE7202BF12C5A00EC48FB /* Products */,
+				D9A1A5082C0EB29500C1D008 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +144,7 @@
 		D9CEE74D2BF12C8400EC48FB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D98EB6A52BF74DFE00EE7CCA /* MainScreen.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -161,6 +172,8 @@
 			dependencies = (
 			);
 			name = HeartFlicks;
+			packageProductDependencies = (
+			);
 			productName = HeartFlicks;
 			productReference = D9CEE71F2BF12C5A00EC48FB /* HeartFlicks.app */;
 			productType = "com.apple.product-type.application";
@@ -233,6 +246,8 @@
 				Base,
 			);
 			mainGroup = D9CEE7162BF12C5A00EC48FB;
+			packageReferences = (
+			);
 			productRefGroup = D9CEE7202BF12C5A00EC48FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98EB6A62BF74DFE00EE7CCA /* MainScreen.swift in Sources */,
 				D9CEE7252BF12C5A00EC48FB /* ContentView.swift in Sources */,
 				D9CEE7232BF12C5A00EC48FB /* HeartFlicksApp.swift in Sources */,
 			);

@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  HeartFlicks
-//
-//  Created by Sasha on 12.05.2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {
