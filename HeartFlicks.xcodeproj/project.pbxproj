@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D98EB6A62BF74DFE00EE7CCA /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EB6A52BF74DFE00EE7CCA /* MainScreen.swift */; };
+		D9A1A50E2C130DC600C1D008 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D9A1A50D2C130DC600C1D008 /* ElegantCalendar */; };
+		D9A1A5102C130FD400C1D008 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A1A50F2C130FD400C1D008 /* ElegantCalendar.xcassets */; };
+		D9A1A5122C13151100C1D008 /* CalendarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5112C13151100C1D008 /* CalendarScreen.swift */; };
+		D9A1A5142C131EE400C1D008 /* WeekStoreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */; };
+		D9A1A5172C131F8600C1D008 /* WeekCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5162C131F8600C1D008 /* WeekCalendar.swift */; };
 		D9CEE7232BF12C5A00EC48FB /* HeartFlicksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE7222BF12C5A00EC48FB /* HeartFlicksApp.swift */; };
 		D9CEE7252BF12C5A00EC48FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE7242BF12C5A00EC48FB /* ContentView.swift */; };
 		D9CEE7272BF12C5C00EC48FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9CEE7262BF12C5C00EC48FB /* Assets.xcassets */; };
@@ -36,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		D98EB6A52BF74DFE00EE7CCA /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		D9A1A50F2C130FD400C1D008 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../Library/Developer/Xcode/DerivedData/HeartFlicks-cbulqtgdzowazobzotdxrtjmtlei/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
+		D9A1A5112C13151100C1D008 /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
+		D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStoreVM.swift; sourceTree = "<group>"; };
+		D9A1A5162C131F8600C1D008 /* WeekCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCalendar.swift; sourceTree = "<group>"; };
 		D9CEE71F2BF12C5A00EC48FB /* HeartFlicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartFlicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CEE7222BF12C5A00EC48FB /* HeartFlicksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartFlicksApp.swift; sourceTree = "<group>"; };
 		D9CEE7242BF12C5A00EC48FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A1A50E2C130DC600C1D008 /* ElegantCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,21 +84,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D9A1A5082C0EB29500C1D008 /* Frameworks */ = {
+		D9A1A5152C131F5F00C1D008 /* Element */ = {
 			isa = PBXGroup;
 			children = (
+				D9A1A5162C131F8600C1D008 /* WeekCalendar.swift */,
 			);
-			name = Frameworks;
+			path = Element;
 			sourceTree = "<group>";
 		};
 		D9CEE7162BF12C5A00EC48FB = {
 			isa = PBXGroup;
 			children = (
+				D9A1A50F2C130FD400C1D008 /* ElegantCalendar.xcassets */,
 				D9CEE7212BF12C5A00EC48FB /* HeartFlicks */,
 				D9CEE7332BF12C5D00EC48FB /* HeartFlicksTests */,
 				D9CEE73D2BF12C5D00EC48FB /* HeartFlicksUITests */,
 				D9CEE7202BF12C5A00EC48FB /* Products */,
-				D9A1A5082C0EB29500C1D008 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				D98EB6A52BF74DFE00EE7CCA /* MainScreen.swift */,
+				D9A1A5152C131F5F00C1D008 /* Element */,
+				D9A1A5112C13151100C1D008 /* CalendarScreen.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -152,6 +165,7 @@
 		D9CEE74E2BF12C9600EC48FB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -173,6 +187,7 @@
 			);
 			name = HeartFlicks;
 			packageProductDependencies = (
+				D9A1A50D2C130DC600C1D008 /* ElegantCalendar */,
 			);
 			productName = HeartFlicks;
 			productReference = D9CEE71F2BF12C5A00EC48FB /* HeartFlicks.app */;
@@ -247,6 +262,7 @@
 			);
 			mainGroup = D9CEE7162BF12C5A00EC48FB;
 			packageReferences = (
+				D9A1A50C2C130DC600C1D008 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
 			);
 			productRefGroup = D9CEE7202BF12C5A00EC48FB /* Products */;
 			projectDirPath = "";
@@ -266,6 +282,7 @@
 			files = (
 				D9CEE72B2BF12C5C00EC48FB /* Preview Assets.xcassets in Resources */,
 				D9CEE7272BF12C5C00EC48FB /* Assets.xcassets in Resources */,
+				D9A1A5102C130FD400C1D008 /* ElegantCalendar.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +308,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98EB6A62BF74DFE00EE7CCA /* MainScreen.swift in Sources */,
+				D9A1A5172C131F8600C1D008 /* WeekCalendar.swift in Sources */,
+				D9A1A5122C13151100C1D008 /* CalendarScreen.swift in Sources */,
 				D9CEE7252BF12C5A00EC48FB /* ContentView.swift in Sources */,
+				D9A1A5142C131EE400C1D008 /* WeekStoreVM.swift in Sources */,
 				D9CEE7232BF12C5A00EC48FB /* HeartFlicksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,6 +661,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D9A1A50C2C130DC600C1D008 /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThasianX/ElegantCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D9A1A50D2C130DC600C1D008 /* ElegantCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9A1A50C2C130DC600C1D008 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
+			productName = ElegantCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D9CEE7172BF12C5A00EC48FB /* Project object */;
 }
