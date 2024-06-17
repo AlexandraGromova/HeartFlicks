@@ -9,7 +9,6 @@ struct CalendarScreen: View {
     
     var body: some View {
         ElegantCalendarView(calendarManager: calendarManager)
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 

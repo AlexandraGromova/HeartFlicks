@@ -5,7 +5,9 @@ import SwiftUI
 struct HeartFlicksApp: App {
     var body: some Scene {
         WindowGroup {
-            MainScreen()
+            RouterView {
+                MainScreen()
+            }
         }
     }
 }
