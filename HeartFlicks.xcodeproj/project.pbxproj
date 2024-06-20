@@ -14,8 +14,10 @@
 		D9A1A5122C13151100C1D008 /* CalendarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5112C13151100C1D008 /* CalendarScreen.swift */; };
 		D9A1A5142C131EE400C1D008 /* WeekStoreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */; };
 		D9A1A5172C131F8600C1D008 /* WeekCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5162C131F8600C1D008 /* WeekCalendar.swift */; };
+		D9A61C802C242B8E0086EE16 /* MainScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A61C7F2C242B8E0086EE16 /* MainScreenVM.swift */; };
+		D9A61C852C242CAD0086EE16 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A61C842C242CAD0086EE16 /* AppContainer.swift */; };
+		D9A61C8A2C2463830086EE16 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D9A61C892C2463830086EE16 /* Swinject */; };
 		D9CEE7232BF12C5A00EC48FB /* HeartFlicksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE7222BF12C5A00EC48FB /* HeartFlicksApp.swift */; };
-		D9CEE7252BF12C5A00EC48FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE7242BF12C5A00EC48FB /* ContentView.swift */; };
 		D9CEE7272BF12C5C00EC48FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9CEE7262BF12C5C00EC48FB /* Assets.xcassets */; };
 		D9CEE72B2BF12C5C00EC48FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9CEE72A2BF12C5C00EC48FB /* Preview Assets.xcassets */; };
 		D9CEE7352BF12C5D00EC48FB /* HeartFlicksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE7342BF12C5D00EC48FB /* HeartFlicksTests.swift */; };
@@ -47,9 +49,10 @@
 		D9A1A5112C13151100C1D008 /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
 		D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStoreVM.swift; sourceTree = "<group>"; };
 		D9A1A5162C131F8600C1D008 /* WeekCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCalendar.swift; sourceTree = "<group>"; };
+		D9A61C7F2C242B8E0086EE16 /* MainScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenVM.swift; sourceTree = "<group>"; };
+		D9A61C842C242CAD0086EE16 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		D9CEE71F2BF12C5A00EC48FB /* HeartFlicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartFlicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CEE7222BF12C5A00EC48FB /* HeartFlicksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartFlicksApp.swift; sourceTree = "<group>"; };
-		D9CEE7242BF12C5A00EC48FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D9CEE7262BF12C5C00EC48FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9CEE7282BF12C5C00EC48FB /* HeartFlicks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeartFlicks.entitlements; sourceTree = "<group>"; };
 		D9CEE72A2BF12C5C00EC48FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9A1A50E2C130DC600C1D008 /* ElegantCalendar in Frameworks */,
+				D9A61C8A2C2463830086EE16 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,14 +106,39 @@
 			path = Element;
 			sourceTree = "<group>";
 		};
+		D9A61C812C242C630086EE16 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */,
+				D9A61C7F2C242B8E0086EE16 /* MainScreenVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D9A61C832C242C860086EE16 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				D9A61C842C242CAD0086EE16 /* AppContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		D9A61C882C2463830086EE16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9CEE7162BF12C5A00EC48FB = {
 			isa = PBXGroup;
 			children = (
-				D9A1A50F2C130FD400C1D008 /* ElegantCalendar.xcassets */,
 				D9CEE7212BF12C5A00EC48FB /* HeartFlicks */,
 				D9CEE7332BF12C5D00EC48FB /* HeartFlicksTests */,
 				D9CEE73D2BF12C5D00EC48FB /* HeartFlicksUITests */,
+				D9A1A50F2C130FD400C1D008 /* ElegantCalendar.xcassets */,
 				D9CEE7202BF12C5A00EC48FB /* Products */,
+				D9A61C882C2463830086EE16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				D9CEE7222BF12C5A00EC48FB /* HeartFlicksApp.swift */,
-				D9CEE7242BF12C5A00EC48FB /* ContentView.swift */,
 				D9CEE74E2BF12C9600EC48FB /* Logic */,
 				D9CEE74D2BF12C8400EC48FB /* UI */,
 				D9CEE7262BF12C5C00EC48FB /* Assets.xcassets */,
@@ -166,8 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				D98EB6A52BF74DFE00EE7CCA /* MainScreen.swift */,
-				D9A1A5152C131F5F00C1D008 /* Element */,
 				D9A1A5112C13151100C1D008 /* CalendarScreen.swift */,
+				D9A1A5152C131F5F00C1D008 /* Element */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -175,8 +203,9 @@
 		D9CEE74E2BF12C9600EC48FB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */,
+				D9A61C812C242C630086EE16 /* ViewModels */,
 				D99E3E892C2079A30025DD65 /* Coordinator */,
+				D9A61C832C242C860086EE16 /* DI */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -199,6 +228,7 @@
 			name = HeartFlicks;
 			packageProductDependencies = (
 				D9A1A50D2C130DC600C1D008 /* ElegantCalendar */,
+				D9A61C892C2463830086EE16 /* Swinject */,
 			);
 			productName = HeartFlicks;
 			productReference = D9CEE71F2BF12C5A00EC48FB /* HeartFlicks.app */;
@@ -274,6 +304,7 @@
 			mainGroup = D9CEE7162BF12C5A00EC48FB;
 			packageReferences = (
 				D9A1A50C2C130DC600C1D008 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
+				D9A61C872C2462CF0086EE16 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = D9CEE7202BF12C5A00EC48FB /* Products */;
 			projectDirPath = "";
@@ -319,10 +350,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98EB6A62BF74DFE00EE7CCA /* MainScreen.swift in Sources */,
+				D9A61C852C242CAD0086EE16 /* AppContainer.swift in Sources */,
 				D9A1A5172C131F8600C1D008 /* WeekCalendar.swift in Sources */,
 				D9A1A5122C13151100C1D008 /* CalendarScreen.swift in Sources */,
 				D99E3E8B2C207A050025DD65 /* Router.swift in Sources */,
-				D9CEE7252BF12C5A00EC48FB /* ContentView.swift in Sources */,
+				D9A61C802C242B8E0086EE16 /* MainScreenVM.swift in Sources */,
 				D9A1A5142C131EE400C1D008 /* WeekStoreVM.swift in Sources */,
 				D9CEE7232BF12C5A00EC48FB /* HeartFlicksApp.swift in Sources */,
 			);
@@ -683,6 +715,14 @@
 				minimumVersion = 4.3.2;
 			};
 		};
+		D9A61C872C2462CF0086EE16 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -690,6 +730,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D9A1A50C2C130DC600C1D008 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
 			productName = ElegantCalendar;
+		};
+		D9A61C892C2463830086EE16 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9A61C872C2462CF0086EE16 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

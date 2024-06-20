@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct WeekCalendar: View {
-    @StateObject var weekStore = WeekStoreVM()
+    @StateObject var weekStore = AppContainer.resolve(WeekStoreVM.self)
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
     
@@ -36,9 +36,7 @@ struct WeekCalendar: View {
                 .zIndex(1.0 - abs(distance(week.id)) * 0.1)
                 .padding(.horizontal, 20)
             }
-        }
-        .frame(maxHeight:.infinity , alignment : .top)
-        .padding(.top,50)
+        } 
         .gesture(
             DragGesture()
                 .onChanged { value in
