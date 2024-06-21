@@ -8,35 +8,33 @@ struct WeekCalendar: View {
     var body: some View {
         ZStack {
             ForEach(weekStore.allWeeks) { week in
-                VStack{
-                    HStack {
-                        ForEach(0..<7) { index in
-                            VStack(spacing: 20) {
-                                Text(weekStore.dateToString(date: week.date[index], format: "E").prefix(1))
-                                    .font(.system(size:14))
-                                    .fontWeight(.semibold)
-                                    .frame(maxWidth:.infinity)
-                                
-                                Text(weekStore.dateToString(date: week.date[index], format: "d"))
-                                    .font(.system(size:14))
-                                    .frame(maxWidth:.infinity)
-                            }
-                            .onTapGesture {
-                                weekStore.currentDate = week.date[index]
-                            }
+                HStack {
+                    ForEach(0..<7) { index in
+                        VStack(spacing: 20) {
+                            Text(weekStore.dateToString(date: week.date[index], format: "E").prefix(1))
+                                .font(.system(size:14))
+                                .fontWeight(.semibold)
+                                .frame(maxWidth:.infinity)
+                            
+                            Text(weekStore.dateToString(date: week.date[index], format: "d"))
+                                .font(.system(size:14))
+                                .frame(maxWidth:.infinity)
+                        }
+                        .onTapGesture {
+                            weekStore.currentDate = week.date[index]
                         }
                     }
-                    .frame(width: UIScreen.main.bounds.width)
-                    .background(
-                        Rectangle()
-                            .fill(.white)
-                    )
                 }
+                .frame(width: UIScreen.main.bounds.width)
+                .background(
+                    Rectangle()
+                        .fill(.lightPink)
+                )
                 .offset(x: myXOffset(week.id), y: 0)
                 .zIndex(1.0 - abs(distance(week.id)) * 0.1)
                 .padding(.horizontal, 20)
             }
-        } 
+        }
         .gesture(
             DragGesture()
                 .onChanged { value in
