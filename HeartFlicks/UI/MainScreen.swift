@@ -25,7 +25,6 @@ struct MainScreen: View {
                     }
                 }
                 .padding(.bottom, 15)
-                
                 WeekCalendar()
                 DayCard()
             }
@@ -112,7 +111,7 @@ struct DayCard: View {
                     .multilineTextAlignment(.center)
                     .padding(.top, 40)
                     .padding(.horizontal, 60)
-                Button("Rounded Button") {
+                Button("Add activities") {
                     
                 }
                 .font(.system(size: 15))

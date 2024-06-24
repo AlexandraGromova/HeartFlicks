@@ -15,12 +15,15 @@ struct WeekCalendar: View {
                                 .font(.system(size:14))
                                 .fontWeight(.semibold)
                                 .frame(maxWidth:.infinity)
-                            
                             Text(weekStore.dateToString(date: week.date[index], format: "d"))
                                 .font(.system(size:14))
                                 .frame(maxWidth:.infinity)
+                                .background(
+                                    dateOverlay(for: week.date[index])
+                                )
                         }
                         .onTapGesture {
+                            print("tap \(weekStore.currentDate)")
                             weekStore.currentDate = week.date[index]
                         }
                     }
@@ -53,6 +56,20 @@ struct WeekCalendar: View {
                     }
                 }
         )
+    }
+    
+    func dateOverlay(for date: Date) -> some View {
+        if date == weekStore.currentDate {
+            return AnyView(
+                Circle()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.gray)
+            )
+        } else {
+            return AnyView(
+                Color.clear
+            )
+        }
     }
     
     func distance(_ item: Int) -> Double {
