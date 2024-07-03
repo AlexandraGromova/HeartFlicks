@@ -5,7 +5,7 @@ struct WeekValue: Identifiable {
     var date : [Date]
 }
 
-class WeekStoreVM : ObservableObject {
+class WeekStoreController : ObservableObject {
     // Combined of all Weeks
     @Published var allWeeks : [WeekValue] = []
     

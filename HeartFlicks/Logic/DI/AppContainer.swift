@@ -5,8 +5,8 @@ class AppContainer {
     static private let container = Container()
     
     static func setup() {
-        container.register(WeekStoreVM.self) { r in
-            WeekStoreVM()
+        container.register(WeekStoreController.self) { r in
+            WeekStoreController()
         }
         container.register(MainScreenVM.self) { r in
             MainScreenVM()

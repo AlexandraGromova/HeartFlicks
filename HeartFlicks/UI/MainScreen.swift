@@ -3,6 +3,7 @@ import SwiftUI
 struct MainScreen: View {
     @EnvironmentObject var router: Router
     @StateObject var vm = AppContainer.resolve(MainScreenVM.self)
+    @State var currentDate: String = ""
     
     var body: some View {
         VStack(spacing: 0) {
@@ -26,7 +27,7 @@ struct MainScreen: View {
                 }
                 .padding(.bottom, 15)
                 WeekCalendar()
-                DayCard()
+                DayCard(mainText: $vm.currentDay)
             }
             .background(.lightPink)
             Spacer()
@@ -101,11 +102,12 @@ struct AddLoveAction: View {
 }
 
 struct DayCard: View {
+    var mainText = "No planned cute activities"
     var body: some View {
         HStack() {
             Spacer()
             VStack(alignment: .center) {
-                Text("No planned cute activities")
+                Text(mainText)
                     .font(.system(size: 30).bold())
                     .foregroundStyle(.royalBlue)
                     .multilineTextAlignment(.center)
@@ -133,8 +135,4 @@ struct DayCard: View {
 enum Person {
     case user
     case partner
-}
-
-#Preview {
-    MainScreen()
 }

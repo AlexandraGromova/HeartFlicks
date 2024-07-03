@@ -12,7 +12,7 @@
 		D9A1A50E2C130DC600C1D008 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D9A1A50D2C130DC600C1D008 /* ElegantCalendar */; };
 		D9A1A5102C130FD400C1D008 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A1A50F2C130FD400C1D008 /* ElegantCalendar.xcassets */; };
 		D9A1A5122C13151100C1D008 /* CalendarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5112C13151100C1D008 /* CalendarScreen.swift */; };
-		D9A1A5142C131EE400C1D008 /* WeekStoreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */; };
+		D9A1A5142C131EE400C1D008 /* WeekStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5132C131EE400C1D008 /* WeekStoreController.swift */; };
 		D9A1A5172C131F8600C1D008 /* WeekCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5162C131F8600C1D008 /* WeekCalendar.swift */; };
 		D9A61C802C242B8E0086EE16 /* MainScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A61C7F2C242B8E0086EE16 /* MainScreenVM.swift */; };
 		D9A61C852C242CAD0086EE16 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A61C842C242CAD0086EE16 /* AppContainer.swift */; };
@@ -47,7 +47,7 @@
 		D99E3E8A2C207A050025DD65 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D9A1A50F2C130FD400C1D008 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../Library/Developer/Xcode/DerivedData/HeartFlicks-cbulqtgdzowazobzotdxrtjmtlei/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
 		D9A1A5112C13151100C1D008 /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
-		D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStoreVM.swift; sourceTree = "<group>"; };
+		D9A1A5132C131EE400C1D008 /* WeekStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStoreController.swift; sourceTree = "<group>"; };
 		D9A1A5162C131F8600C1D008 /* WeekCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCalendar.swift; sourceTree = "<group>"; };
 		D9A61C7F2C242B8E0086EE16 /* MainScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenVM.swift; sourceTree = "<group>"; };
 		D9A61C842C242CAD0086EE16 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		D9A61C812C242C630086EE16 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				D9A1A5132C131EE400C1D008 /* WeekStoreVM.swift */,
+				D9A1A5132C131EE400C1D008 /* WeekStoreController.swift */,
 				D9A61C7F2C242B8E0086EE16 /* MainScreenVM.swift */,
 			);
 			path = ViewModels;
@@ -355,7 +355,7 @@
 				D9A1A5122C13151100C1D008 /* CalendarScreen.swift in Sources */,
 				D99E3E8B2C207A050025DD65 /* Router.swift in Sources */,
 				D9A61C802C242B8E0086EE16 /* MainScreenVM.swift in Sources */,
-				D9A1A5142C131EE400C1D008 /* WeekStoreVM.swift in Sources */,
+				D9A1A5142C131EE400C1D008 /* WeekStoreController.swift in Sources */,
 				D9CEE7232BF12C5A00EC48FB /* HeartFlicksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

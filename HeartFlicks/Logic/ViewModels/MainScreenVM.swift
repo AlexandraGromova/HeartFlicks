@@ -1,6 +1,8 @@
 import Foundation
 
 class MainScreenVM : ObservableObject {
+    @Published var currentDay: String = ""
+    
     
     func getMonth() -> String {
         let now = Date()

@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct WeekCalendar: View {
-    @StateObject var weekStore = AppContainer.resolve(WeekStoreVM.self)
+    @StateObject var weekStore = AppContainer.resolve(WeekStoreController.self)
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
+    @Binding private var currentDate: String = "
     
     var body: some View {
         ZStack {
@@ -25,6 +26,7 @@ struct WeekCalendar: View {
                         .onTapGesture {
                             print("tap \(weekStore.currentDate)")
                             weekStore.currentDate = week.date[index]
+                            currentDate = ("\(weekStore.currentDate)")
                         }
                     }
                 }
