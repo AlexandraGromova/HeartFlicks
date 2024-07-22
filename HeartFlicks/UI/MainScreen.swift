@@ -3,32 +3,24 @@ import SwiftUI
 struct MainScreen: View {
     @EnvironmentObject var router: Router
     @StateObject var vm = AppContainer.resolve(MainScreenVM.self)
-    @State var currentDate: String = ""
+    //    @State var currentDate: String = ""
     
     var body: some View {
         VStack(spacing: 0) {
             VStack(spacing: 0) {
-                HStack() {
-                    Spacer()
-                    Text("\(vm.getMonth())")
-                        .font(.system(size: 25))
-                        .foregroundStyle(.royalBlue)
-                        .padding(.horizontal, 10)
-                    Button {
-                        router.navigateTo(Router.Route.calendarScreen)
-                    } label: {
-                        Image(systemName: "calendar")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 25)
-                            .padding(.trailing, 25)
-                            .foregroundStyle(.royalBlue)
-                    }
+                Spacer()
+                    .frame(height: 0)
+                TopView(month: "\(vm.getMonth())") {
+                    router.navigateTo(Router.Route.calendarScreen)
                 }
                 .padding(.bottom, 15)
                 WeekCalendar()
-                DayCard(mainText: $vm.currentDay)
+                Spacer()
+                    .frame(height: 20)
+                DayCard(mainText: "currentDay")
+                Spacer()
             }
+            .frame(height: UIScreen.main.bounds.height/2 - 20)
             .background(.lightPink)
             Spacer()
             LoveAdvice()
@@ -42,6 +34,31 @@ struct MainScreen: View {
             
         }
         .background(.lightYellow)
+    }
+}
+
+struct TopView: View {
+    let month: String
+    let tapCalendar: () -> ()
+    var body: some View {
+        HStack(spacing: 0) {
+            Spacer()
+            Text(month)
+                .font(.system(size: 25))
+                .foregroundStyle(.royalBlue)
+                .padding(.horizontal, 10)
+            Button {
+                tapCalendar()
+                //                router.navigateTo(Router.Route.calendarScreen)
+            } label: {
+                Image(systemName: "calendar")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 25)
+                    .padding(.trailing, 25)
+                    .foregroundStyle(.royalBlue)
+            }
+        }
     }
 }
 
@@ -61,7 +78,7 @@ struct LoveAdvice: View {
                                 .fill(.lightPink)
                                 .frame(width: 100, height: 120)
                                 .padding(.horizontal, 1)
-                            Text("okj")
+                            Text("")
                                 .frame(alignment: .leading)
                             
                         }
@@ -122,6 +139,8 @@ struct DayCard: View {
                 .background(.royalBlue)
                 .clipShape(Capsule())
                 .padding(.top, 15)
+                Spacer()
+                    .frame(height: 30)
                 Text("👇 Perhaps these articles will help you 👇")
                     .font(.system(size: 15))
                     .foregroundStyle(.royalBlue)
