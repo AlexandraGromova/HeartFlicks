@@ -3,7 +3,6 @@ import SwiftUI
 struct MainScreen: View {
     @EnvironmentObject var router: Router
     @StateObject var vm = AppContainer.resolve(MainScreenVM.self)
-    //    @State var currentDate: String = ""
     
     var body: some View {
         VStack(spacing: 0) {
@@ -49,7 +48,6 @@ struct TopView: View {
                 .padding(.horizontal, 10)
             Button {
                 tapCalendar()
-                //                router.navigateTo(Router.Route.calendarScreen)
             } label: {
                 Image(systemName: "calendar")
                     .resizable()

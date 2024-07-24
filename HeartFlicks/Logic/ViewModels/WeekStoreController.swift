@@ -7,6 +7,7 @@ import Foundation
 
 class WeekStoreController : ObservableObject {
     @Published var currentWeek : [Date] = []
+    @Published var currentDay = Date()
     
     init() {
         fetchCurrentWeek()
@@ -25,5 +26,17 @@ class WeekStoreController : ObservableObject {
                 currentWeek.append(weekday)
             }
         }
+    }
+    
+    func extractDate (date: Date, format: String) -> String {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = format
+        return formatter.string(from: date)
+    }
+    
+    func isToday(date: Date)-> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(currentDay, inSameDayAs: date)
     }
 }
