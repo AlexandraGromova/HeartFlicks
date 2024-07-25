@@ -1,9 +1,4 @@
 import Foundation
-//
-//struct WeekValue: Identifiable {
-//  
-//
-//}
 
 class WeekStoreController : ObservableObject {
     @Published var currentWeek : [Date] = []

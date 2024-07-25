@@ -17,6 +17,19 @@ struct MainScreen: View {
                 Spacer()
                     .frame(height: 20)
                 DayCard(mainText: "currentDay")
+//                LazyVStack() {
+//                    if let notices = vm.filteredNotices {
+//                        if notices.isEmpty {
+//                            Text ("No notices found")
+//                        } else {
+//                            ForEach(notices) { notice in
+//                                Text (notice.noticeTitle)
+//                            }
+//                        }
+//                    } else {
+//                        Text("none")
+//                    }
+//                }
                 Spacer()
             }
             .frame(height: UIScreen.main.bounds.height/2 - 20)

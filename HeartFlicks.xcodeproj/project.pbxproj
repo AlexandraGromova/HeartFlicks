@@ -23,6 +23,7 @@
 		D9CEE7352BF12C5D00EC48FB /* HeartFlicksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE7342BF12C5D00EC48FB /* HeartFlicksTests.swift */; };
 		D9CEE73F2BF12C5D00EC48FB /* HeartFlicksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE73E2BF12C5D00EC48FB /* HeartFlicksUITests.swift */; };
 		D9CEE7412BF12C5D00EC48FB /* HeartFlicksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEE7402BF12C5D00EC48FB /* HeartFlicksUITestsLaunchTests.swift */; };
+		D9F7C4512C52C29F0046983F /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7C4502C52C29F0046983F /* Notice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D9CEE73A2BF12C5D00EC48FB /* HeartFlicksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartFlicksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CEE73E2BF12C5D00EC48FB /* HeartFlicksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartFlicksUITests.swift; sourceTree = "<group>"; };
 		D9CEE7402BF12C5D00EC48FB /* HeartFlicksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartFlicksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9F7C4502C52C29F0046983F /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,8 +208,17 @@
 				D9A61C812C242C630086EE16 /* ViewModels */,
 				D99E3E892C2079A30025DD65 /* Coordinator */,
 				D9A61C832C242C860086EE16 /* DI */,
+				D9F7C4522C52C2A30046983F /* DTO */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		D9F7C4522C52C2A30046983F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				D9F7C4502C52C29F0046983F /* Notice.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +363,7 @@
 				D98EB6A62BF74DFE00EE7CCA /* MainScreen.swift in Sources */,
 				D9A61C852C242CAD0086EE16 /* AppContainer.swift in Sources */,
 				D9A1A5172C131F8600C1D008 /* WeekCalendar.swift in Sources */,
+				D9F7C4512C52C29F0046983F /* Notice.swift in Sources */,
 				D9A1A5122C13151100C1D008 /* CalendarScreen.swift in Sources */,
 				D99E3E8B2C207A050025DD65 /* Router.swift in Sources */,
 				D9A61C802C242B8E0086EE16 /* MainScreenVM.swift in Sources */,
