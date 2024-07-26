@@ -1,26 +1,27 @@
 import SwiftUI
 
 struct WeekCalendar: View {
-    @StateObject var weekStore = AppContainer.resolve(WeekStoreController.self)
     @Namespace var animation
+    var currentWeek: [Date]
+    @Binding var currentDay: Date 
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(weekStore.currentWeek, id: \.self) { day in
+                ForEach(currentWeek, id: \.self) { day in
                     VStack(spacing: 10) {
-                        Text(weekStore.extractDate(date: day, format: "dd"))
+                        Text(extractDate(date: day, format: "dd"))
                             .font(.system(size:14))
                             .fontWeight(.semibold)
-                        Text(weekStore.extractDate(date: day, format: "EEE"))
+                        Text(extractDate(date: day, format: "EEE"))
                             .font(.system(size:14))
                     }
-                    .foregroundStyle(weekStore.isToday(date: day) ? .primary : .tertiary)
-                    .foregroundColor(weekStore.isToday(date: day) ? .white : .black)
+                    .foregroundStyle(isToday(date: day) ? .primary : .tertiary)
+                    .foregroundColor(isToday(date: day) ? .white : .black)
                     .frame(width: 45, height: 80)
                     .background(
                         ZStack {
-                            if weekStore.isToday(date: day) {
+                            if isToday(date: day) {
                                 Capsule()
                                     .fill(.royalBlue)
                                     .matchedGeometryEffect(id: "CURRENTDAY", in: animation)
@@ -30,7 +31,7 @@ struct WeekCalendar: View {
                     .contentShape(Capsule())
                     .onTapGesture {
                         withAnimation{
-                            weekStore.currentDay = day
+                            currentDay = day
                         }
                     }
                 }
@@ -38,9 +39,16 @@ struct WeekCalendar: View {
             .padding(.horizontal)
         }
     }
-}
-
-
-#Preview {
-    WeekCalendar()
+    
+    func extractDate (date: Date, format: String) -> String {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = format
+        return formatter.string(from: date)
+    }
+    
+    func isToday(date: Date)-> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(currentDay, inSameDayAs: date)
+    }
 }

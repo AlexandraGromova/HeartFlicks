@@ -13,23 +13,17 @@ struct MainScreen: View {
                     router.navigateTo(Router.Route.calendarScreen)
                 }
                 .padding(.bottom, 15)
-                WeekCalendar()
+                WeekCalendar(currentWeek: vm.currentWeek, currentDay: $vm.currentDay)
                 Spacer()
-                    .frame(height: 20)
-                DayCard(mainText: "currentDay")
-//                LazyVStack() {
-//                    if let notices = vm.filteredNotices {
-//                        if notices.isEmpty {
-//                            Text ("No notices found")
-//                        } else {
-//                            ForEach(notices) { notice in
-//                                Text (notice.noticeTitle)
-//                            }
-//                        }
-//                    } else {
-//                        Text("none")
-//                    }
-//                }
+                    .frame(height: 10)
+                if let notices = vm.filteredNotices {
+                    DayCard(mainText: "No planned \ncute activities", notices: notices, isScrollDisabled: notices.count>3 ? false : true)
+                        .onChange(of: vm.currentDay) { newValue in
+                            vm.filterTodayNotices()
+                        }
+                } else {
+                    Text("none")
+                }
                 Spacer()
             }
             .frame(height: UIScreen.main.bounds.height/2 - 20)
@@ -43,7 +37,6 @@ struct MainScreen: View {
                 AddLoveAction(person: .partner)
             }
             .padding(.bottom, 40)
-            
         }
         .background(.lightYellow)
     }
@@ -128,19 +121,57 @@ struct AddLoveAction: View {
         .padding(.horizontal, 40)
     }
 }
+struct NoticeCard: View {
+    var date: Date?
+    var title: String
+    var body: some View {
+        HStack() {
+            Text(title)
+                .font(.system(size: 20).bold())
+                .foregroundStyle(.royalBlue)
+                .padding(.horizontal, 10)
+            Divider()
+                .frame(height: 25)
+                .foregroundStyle(.royalBlue)
+            Text("19:00")
+                .font(.system(size: 20).bold())
+                .foregroundStyle(.royalBlue)
+                .padding(.horizontal, 10)
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 12)
+        .background(.lightBlue)
+        .cornerRadius(15)
+    }
+}
+
 
 struct DayCard: View {
-    var mainText = "No planned cute activities"
+    var mainText : String
+    var notices : [Notice]
+    var isScrollDisabled : Bool
+    
     var body: some View {
         HStack() {
             Spacer()
             VStack(alignment: .center) {
-                Text(mainText)
-                    .font(.system(size: 30).bold())
-                    .foregroundStyle(.royalBlue)
-                    .multilineTextAlignment(.center)
-                    .padding(.top, 40)
-                    .padding(.horizontal, 60)
+                ScrollView() {
+                    LazyVStack() {
+                        if notices.isEmpty {
+                            Text (mainText)
+                                .font(.system(size: 30).bold())
+                                .foregroundStyle(.royalBlue)
+                                .multilineTextAlignment(.center)
+                        } else {
+                            ForEach(notices) { notice in
+                                NoticeCard( title: notice.noticeTitle)
+                            }
+                        }
+                    }
+                    .frame(minHeight: 140)
+                }
+                .scrollDisabled(isScrollDisabled)
+                .scrollIndicators(ScrollIndicatorVisibility.never)
                 Button("Add activities") {
                     
                 }
@@ -149,13 +180,11 @@ struct DayCard: View {
                 .foregroundColor(.white)
                 .background(.royalBlue)
                 .clipShape(Capsule())
-                .padding(.top, 15)
-                Spacer()
-                    .frame(height: 30)
+                .padding(.bottom, 15)
                 Text("👇 Perhaps these articles will help you 👇")
                     .font(.system(size: 15))
                     .foregroundStyle(.royalBlue)
-                    .padding(.top, 20)
+                    .padding(.bottom, 20)
             }
             Spacer()
         }
