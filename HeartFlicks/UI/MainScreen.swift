@@ -29,7 +29,7 @@ struct MainScreen: View {
             .frame(height: UIScreen.main.bounds.height/2 - 20)
             .background(.lightPink)
             Spacer()
-            LoveAdvice()
+            LoveAdvice(articles: vm.storedArticles)
             Spacer()
             HStack() {
                 AddLoveAction(person: .user)
@@ -67,6 +67,7 @@ struct TopView: View {
 }
 
 struct LoveAdvice: View {
+    var articles: [Article]
     var body: some View {
         VStack(alignment: .leading) {
             Text("Articles about relationship:")
@@ -76,19 +77,35 @@ struct LoveAdvice: View {
                 .padding(.leading, 15)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack() {
-                    ForEach(0..<6) {_ in
-                        ZStack(){
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(.lightPink)
-                                .frame(width: 100, height: 120)
-                                .padding(.horizontal, 1)
-                            Text("")
-                                .frame(alignment: .leading)
-                            
-                        }
+                    ForEach(articles) { article in
+                        LoveAdviceCell(title: article.title)
                     }
                 }
             }
+        }
+    }
+}
+struct LoveAdviceCell: View {
+    var title: String
+    var body: some View {
+        ZStack() {
+            RoundedRectangle(cornerRadius: 15)
+                .fill(.lightPink)
+                .frame(width: 100, height: 120)
+                .padding(.horizontal, 1)
+            Image("plug_image")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 85, height: 105)
+                .clipShape(RoundedRectangle(cornerRadius: 13))
+            VStack() {
+                Text(title)
+                    .font(.system(size: 15).bold())
+                    .foregroundStyle(.white)
+                    .padding(.top, 20)
+                Spacer()
+            }
+            .frame(width: 85, alignment: .leading)
         }
     }
 }

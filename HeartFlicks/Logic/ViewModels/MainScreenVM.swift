@@ -17,6 +17,13 @@ class MainScreenVM : ObservableObject {
         Notice(noticeTitle: "tgkn", noticeDate: .init(timeIntervalSince1970: 1721763955)),
         Notice(noticeTitle: "tgkn", noticeDate: .init(timeIntervalSince1970: 1721763955)),
     ]
+    @Published var storedArticles: [Article] = [
+        Article(title: "cdeesdv efvcfds"),
+        Article(title: "Ddeafcfvcfds"),
+        Article(title: "ds"),
+        Article(title: "Wsdcsc fvdf"),
+        Article(title: "Gvecsdfv  efv sv  fvdv")
+        ]
     
     init() {
         fetchCurrentWeek()

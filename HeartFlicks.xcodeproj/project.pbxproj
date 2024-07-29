@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D98EB6A62BF74DFE00EE7CCA /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EB6A52BF74DFE00EE7CCA /* MainScreen.swift */; };
 		D99E3E8B2C207A050025DD65 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E3E8A2C207A050025DD65 /* Router.swift */; };
+		D99FF10C2C58084B00773894 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99FF10B2C58084B00773894 /* Article.swift */; };
 		D9A1A50E2C130DC600C1D008 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D9A1A50D2C130DC600C1D008 /* ElegantCalendar */; };
 		D9A1A5102C130FD400C1D008 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A1A50F2C130FD400C1D008 /* ElegantCalendar.xcassets */; };
 		D9A1A5122C13151100C1D008 /* CalendarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1A5112C13151100C1D008 /* CalendarScreen.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		D98EB6A52BF74DFE00EE7CCA /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		D99E3E8A2C207A050025DD65 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D99FF10B2C58084B00773894 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		D9A1A50F2C130FD400C1D008 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../Library/Developer/Xcode/DerivedData/HeartFlicks-cbulqtgdzowazobzotdxrtjmtlei/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
 		D9A1A5112C13151100C1D008 /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
 		D9A1A5132C131EE400C1D008 /* WeekStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStoreController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				D9F7C4502C52C29F0046983F /* Notice.swift */,
+				D99FF10B2C58084B00773894 /* Article.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				D9A61C852C242CAD0086EE16 /* AppContainer.swift in Sources */,
 				D9A1A5172C131F8600C1D008 /* WeekCalendar.swift in Sources */,
 				D9F7C4512C52C29F0046983F /* Notice.swift in Sources */,
+				D99FF10C2C58084B00773894 /* Article.swift in Sources */,
 				D9A1A5122C13151100C1D008 /* CalendarScreen.swift in Sources */,
 				D99E3E8B2C207A050025DD65 /* Router.swift in Sources */,
 				D9A61C802C242B8E0086EE16 /* MainScreenVM.swift in Sources */,
