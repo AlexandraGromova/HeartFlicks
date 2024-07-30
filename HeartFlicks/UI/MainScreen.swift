@@ -3,42 +3,65 @@ import SwiftUI
 struct MainScreen: View {
     @EnvironmentObject var router: Router
     @StateObject var vm = AppContainer.resolve(MainScreenVM.self)
+    @State var addActvMode = false
+    let animationDuration = 0.5
     
     var body: some View {
-        VStack(spacing: 0) {
+        ZStack(){
             VStack(spacing: 0) {
-                Spacer()
-                    .frame(height: 0)
-                TopView(month: "\(vm.getMonth())") {
-                    router.navigateTo(Router.Route.calendarScreen)
+                VStack(spacing: 0) {
+                    Spacer()
+                        .frame(height: 0)
+                    TopView(month: "\(vm.getMonth())") {
+                        router.navigateTo(Router.Route.calendarScreen)
+                    }
+                    .padding(.bottom, 15)
+                    WeekCalendar(currentWeek: vm.currentWeek, currentDay: $vm.currentDay)
+                    Spacer()
+                        .frame(height: 10)
+                    if let notices = vm.filteredNotices {
+                        DayCard(mainText: "No planned \ncute activities", notices: notices, isScrollDisabled: notices.count>3 ? false : true) { addActvMode.toggle() }
+                            .onChange(of: vm.currentDay) { newValue in
+                                vm.filterTodayNotices()
+                            }
+                    } else {
+                        Text("none")
+                    }
+                    Spacer()
                 }
-                .padding(.bottom, 15)
-                WeekCalendar(currentWeek: vm.currentWeek, currentDay: $vm.currentDay)
+                .frame(height: UIScreen.main.bounds.height/2 - 20)
+                .background(.lightPink)
                 Spacer()
-                    .frame(height: 10)
-                if let notices = vm.filteredNotices {
-                    DayCard(mainText: "No planned \ncute activities", notices: notices, isScrollDisabled: notices.count>3 ? false : true)
-                        .onChange(of: vm.currentDay) { newValue in
-                            vm.filterTodayNotices()
-                        }
-                } else {
-                    Text("none")
+                LoveAdvice(articles: vm.storedArticles)
+                Spacer()
+                HStack() {
+                    AddLoveAction(person: .user)
+                    Spacer()
+                    AddLoveAction(person: .partner)
                 }
-                Spacer()
+                .padding(.bottom, 40)
             }
-            .frame(height: UIScreen.main.bounds.height/2 - 20)
-            .background(.lightPink)
-            Spacer()
-            LoveAdvice(articles: vm.storedArticles)
-            Spacer()
-            HStack() {
-                AddLoveAction(person: .user)
-                Spacer()
-                AddLoveAction(person: .partner)
+            .background(.lightYellow)
+            .blur(radius: addActvMode ? 5 : 0)
+            .disabled(addActvMode ? true : false)
+//            .animation(Animation.easeIn(duration: animationDuration))
+            if addActvMode {
+                HStack() {
+                    Button("Add activities") {
+                        addActvMode.toggle()
+                    }
+                    .font(.system(size: 15))
+                    .padding(10)
+                    .foregroundColor(.white)
+                    .background(.royalBlue)
+                    .clipShape(Capsule())
+                    .padding(.bottom, 15)
+                }
+                .frame(width: 180, height: 200)
+                .background(.fluorescentPink)
+                .clipShape(RoundedRectangle(cornerRadius: 25))
             }
-            .padding(.bottom, 40)
         }
-        .background(.lightYellow)
     }
 }
 
@@ -167,6 +190,7 @@ struct DayCard: View {
     var mainText : String
     var notices : [Notice]
     var isScrollDisabled : Bool
+    var addActvTap : () -> ()
     
     var body: some View {
         HStack() {
@@ -190,7 +214,7 @@ struct DayCard: View {
                 .scrollDisabled(isScrollDisabled)
                 .scrollIndicators(ScrollIndicatorVisibility.never)
                 Button("Add activities") {
-                    
+                    addActvTap()
                 }
                 .font(.system(size: 15))
                 .padding(10)
