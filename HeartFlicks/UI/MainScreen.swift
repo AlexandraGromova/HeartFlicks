@@ -4,6 +4,8 @@ struct MainScreen: View {
     @EnvironmentObject var router: Router
     @StateObject var vm = AppContainer.resolve(MainScreenVM.self)
     @State var addActvMode = false
+    @State private var name: String = "Dating"
+    @State private var selectedTime = Date.now
     let animationDuration = 0.5
     
     var body: some View {
@@ -44,22 +46,48 @@ struct MainScreen: View {
             .background(.lightYellow)
             .blur(radius: addActvMode ? 5 : 0)
             .disabled(addActvMode ? true : false)
-//            .animation(Animation.easeIn(duration: animationDuration))
+            //            .animation(Animation.easeIn(duration: animationDuration))
             if addActvMode {
-                HStack() {
+                VStack(spacing: 0) {
+                    HStack() {
+                        Spacer()
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.pink)
+                    }
+                    .padding(.top, 20)
+                    .padding(.trailing, 20)
+                    Spacer()
+                        .frame(height: 10)
+                    TextField("Title", text: $name)
+                        .font(.system(size: 17))
+                        .padding(10)
+                        .background(.gray.opacity(0.2))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                    Spacer()
+                    DatePicker("", selection: $selectedTime)
+                        .padding(.trailing, 31)
+                    Spacer()
                     Button("Add activities") {
                         addActvMode.toggle()
                     }
-                    .font(.system(size: 15))
+                    .font(.system(size: 17))
                     .padding(10)
                     .foregroundColor(.white)
                     .background(.royalBlue)
                     .clipShape(Capsule())
-                    .padding(.bottom, 15)
+                    .padding(.bottom, 25)
                 }
-                .frame(width: 180, height: 200)
-                .background(.fluorescentPink)
+                .frame(width: 250, height: 280)
+                .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 25))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 25)
+                        .strokeBorder(.lightBlue, lineWidth: 10)
+                )
             }
         }
     }
